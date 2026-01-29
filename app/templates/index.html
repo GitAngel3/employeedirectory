@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Directory</title>
+    <style>
+        .full-time {
+            color: green;
+            font-weight: bold;
+        }
+        .part-time {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+  {% for obj in my_objects %}
+    <h1>{{ obj.name }}</h1>
+
+    <p>Job title: {{obj.job_title }}</p>
+    <p>Salary: {{ obj.salary }}</p>
+    <p>Employee type:{{obj.employee_type}}</p>
+    
+    {% if employee_type.is_full_time %}
+                    <span class="full-time">Full-Time</span>
+                {% else %}
+                    <span class="part-time">Part-Time</span>
+    {% endif %}
+    <hr>
+    
+   {% endfor %}
+</body>
+</html>
